@@ -1,0 +1,104 @@
+"""
+1.2 Entrada y salida de datos
+Probaremos la entrada y salida de teclado y de archivo
+"""
+
+#Esta es una entrada de teclado 
+"""
+1.- Crear una variable.
+2.- igualarla a un input, con un mensaje para mostrar en pantalla.
+"""
+nombre = input("Por favor, escribe tu nombre:")
+
+#Obtendremos el output de nuestro input anterior
+"""
+1.-Llamamos a la funcion print.
+2.-Ponemos un mensaje que queramos mostrar en pantalla y lo concatenamos con nuestra variable.
+"""
+print("Mucho gusto,", nombre)
+
+#En esta seccion probaremos la entrada y salida de archivo.
+"""
+1.-Llamamos a la funcion "with open".
+2.-Introducimos el nombre del archivo.
+3.-Seleccionamos el tipo de accion a realizar.
+4.-Llamamos a la funcion "as".
+5.-creamos una variable donde se especificara lo guardado.
+"""
+#Tipos de acciones con archivos
+"""
+"r" = read : Abre el archivo para lectura
+"w" = write : Abre el archivo para escritura, y en caso de no existir lo crea, en caso de ya existir sobreescribe el contenido.
+"a" = attach : Abre el archivo para escribir, pero agrega el contenido al final del archivo si ya existe.
+"x" = create : crea un nuevo archivo y lo abre para escritura.
+"""
+with open("archivo.txt", "r") as archivo: 
+    contenido = archivo.read()
+#Creamos una variable donde declaremos lo que tiene que hacer la variable "archivo".
+    
+#Obtendremos el output del archivo anterior.
+    
+"""
+1.-Llamamos a la funcion "with open".
+2.-Introducimos el nombre del archivo.
+3.-Seleccionamos el tipo de accion a realizar.
+4.-Llamamos a la funcion "as".
+5.-creamos una variable donde se especificara lo guardado.
+"""
+
+#Acompañamos el archivo con ".write" para especificar la accion a realizar, y ponemos un mensaje a mostrar en pantalla y concatenamos con str.
+with open("resultado2.txt", "w") as archivo:
+    archivo.write("Tu archivo dice lo siguiente:" + str(contenido))
+
+"""
+Ejercicio de refuerzo:
+Escribe un programa que solicite al usuario su edad, multiplique la edad por 2 y luego imprima el resultado.
+ Utiliza las funciones de entrada y salida de datos que aprendiste. ¿Cómo te fue?
+"""
+#Solicita a el usuario su edad.
+edad = input("¿Cual es tu edad:? ")
+
+#Convertir la edad de str a int
+edad = int(edad)
+
+#Multiplicar por 2 e imprimir el resultado
+resultado = edad*2
+print("Tu edad multiplicada por 2 es:", resultado)
+
+"""
+Ejercicio de refuerzo 2
+Escribe un programa en Python que solicite al usuario su peso (en kilogramos) y su altura (en metros),
+ y luego calcule el Índice de Masa Corporal
+"""
+#solicitar a el usuario su peso y su altura.
+kilogramos = input("Porfavor, ingresa tu peso en Kg:")
+altura = input("Porfavor, ingresa tu estatura en metros:")
+
+#convertir de str a int y float.
+kilogramos = float(kilogramos)
+altura = float(altura)
+
+#Elevar a el cuadrado la altura.
+resultado_altura = altura*altura
+
+#formatear los datos en formula
+imc = kilogramos/resultado_altura 
+
+#Indice de masa corporal = peso/altura*2
+print("tu imc es de:", imc)
+
+#condicionales if,elif,else
+
+#objetivo: clasificar a las personas por su indice de masa corporal.
+
+
+clasificacion_imc = "Tu clasificacion de imc indica que:"
+if imc  <18 :
+    print(clasificacion_imc, "estas bajo de peso ")
+elif 18<= imc <25:
+    print(clasificacion_imc, "tienes un peso normal" )
+elif 25<= imc <35: 
+    print(clasificacion_imc, "Tienes sobrepeso")
+else:
+    print(clasificacion_imc, "¡PELIGRO! tienes obesidad")
+    
